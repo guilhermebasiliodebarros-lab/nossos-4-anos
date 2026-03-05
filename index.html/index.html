@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos 4 Anos ❤️</title>
+    <style>
+        :root {
+            --primary: #e63946;
+            --bg: #f8f9fa;
+            --text: #2b2d42;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; text-align: center; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('sua-foto-favorita.jpg') center/cover; color: white; }
+        .counter-container { padding: 50px 20px; background: white; margin-top: -50px; border-radius: 30px 30px 0 0; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .highlight { color: var(--primary); font-weight: bold; font-size: 1.5rem; }
+        footer { padding: 40px; font-style: italic; opacity: 0.7; }
+        img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>4 Anos de Nós</h1>
+        <p>O melhor "sim" da minha vida.</p>
+    </header>
+
+    <section class="counter-container">
+        <h2>Estamos construindo nossa história há:</h2>
+        <div id="timer" class="highlight">Calculando...</div>
+        <p>E agora, começando o melhor capítulo no nosso novo apartamento! 🏠</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Onde tudo começou</h3>
+            <p>De técnico de robótica a parceiro de vida. Cada detalhe da nossa jornada valeu a pena.</p>
+        </div>
+        <div class="card">
+            <h3>Bodas de Flores e Frutas</h3>
+            <p>4 anos cultivando amor para colher os melhores frutos agora no nosso novo lar.</p>
+        </div>
+        <div class="card">
+            <h3>O Futuro</h3>
+            <p>Mal posso esperar para ver o que os próximos anos reservam para a nossa família.</p>
+        </div>
+    </div>
+
+    <script>
+        // Defina aqui a data do seu casamento
+        const weddingDate = new Date("2022-03-05T00:00:00").getTime(); 
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = now - weddingDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = 
+                days + " dias, " + hours + "h " + mins + "m " + secs + "s";
+        }, 1000);
+    </script>
+
+    <footer>
+        Com todo o meu amor, para sempre. ❤️
+    </footer>
+</body>
+</html>
